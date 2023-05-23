@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Hello Binding" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+            Hello, {inp}
+            <lightning-input label="Name" value={inp} onchange={handleChange}></lightning-input>
+        </div>
+        <c-component-doc slot="footer">
+            Change the value of bound property when the value of an input field chages. Types something in the input
+            field to see the recipe in action.
+        </c-component-doc>
+    </lightning-card>
+</template>
