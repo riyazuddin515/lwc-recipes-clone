@@ -10,24 +10,12 @@ describe("c-hello", () => {
   });
 
   it("display greeting", () => {
-    // Arrange
     const element = createElement("c-hello", {
       is: Hello
     });
-
-    // Act
     document.body.appendChild(element);
 
-    // Assert
     const div = element.shadowRoot.querySelector("div");
     expect(div.textContent).toBe("Hello World!");
   });
-
-  // test('is accessible', async () => {
-  //     const element = createElement('c-hello', {
-  //         is: Hello
-  //     });
-  //     document.body.appendChild(element);
-  //     await expect(element).toBeAccessible();
-  // })
 });
