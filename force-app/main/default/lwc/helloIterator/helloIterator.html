@@ -2,9 +2,9 @@
   <lightning-card title="HelloIterator" icon-name="custom:custom14">
     <div class="slds-var-m-around_medium">
       <template iterator:it={contacts}>
-        <div key={it.value.Id}>
+        <div class="contact" key={it.value.Id}>
           <div lwc:if={it.first} class="first"></div>
-          {it.value.Name}, {it.value.Title}
+          <span>{it.value.Name}, {it.value.Title}</span>
           <div lwc:if={it.last} class="last"></div>
         </div>
       </template>
