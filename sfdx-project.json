@@ -2,11 +2,14 @@
   "packageDirectories": [
     {
       "path": "force-app",
-      "default": true
+      "default": true,
+      "package": "LWCRecipesClone",
+      "versionName": "Spring '23",
+      "versionNumber": "57.0.0.NEXT"
     }
   ],
   "name": "lwc-recipes-clone",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "56.0"
+  "sourceApiVersion": "57.0"
 }
