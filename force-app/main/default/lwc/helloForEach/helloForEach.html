@@ -1,0 +1,12 @@
+<template>
+  <lightning-card title="HelloForEach" icon-name="custom:custom14">
+    <div class="slds-var-m-around_medium">
+      <template for:each={contacts} for:item="contact">
+        <p key={contact.Id}>{contact.Name}, {contact.Title}</p>
+      </template>
+    </div>
+    <c-component-doc slot="footer">
+      Loop through an array of items in a template.
+    </c-component-doc>
+  </lightning-card>
+</template>
