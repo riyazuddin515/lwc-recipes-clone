@@ -1,0 +1,15 @@
+<template>
+  <lightning-card title="Api Method" icon-name="standard:product_consumed">
+    <div class="slds-var-m-around_medium">
+      <lightning-button
+        label="Refresh Time"
+        onclick={handleClick}
+      ></lightning-button>
+      <c-clock class="slds-show slds-is-relative"></c-clock>
+    </div>
+    <c-component-doc slot="footer">
+      Parent-to-Child communication. Call a public (api) method in a child
+      component.
+    </c-component-doc>
+  </lightning-card>
+</template>
