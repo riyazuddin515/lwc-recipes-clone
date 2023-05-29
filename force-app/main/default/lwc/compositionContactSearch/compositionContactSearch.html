@@ -1,0 +1,23 @@
+<template>
+  <lightning-card title="CompositionContactSearch" icon-name="custom:custom57">
+    <div class="slds-var-m-around_medium">
+      <lightning-input
+        type="text"
+        label="Search"
+        onchange={handleChange}
+      ></lightning-input>
+      <template if:true={contacts}>
+        <template for:each={contacts} for:item="contact">
+          <c-contact-tile contact={contact} key={contact.Id}></c-contact-tile>
+        </template>
+      </template>
+      <template if:true={error}>
+        <c-error-panel error={error}></c-error-panel>
+      </template>
+    </div>
+    <c-component-doc slot="footer">
+      Create an experience component by assembling multiple child components.
+      Type a few characters in the search bar to experience the recipe.
+    </c-component-doc>
+  </lightning-card>
+</template>

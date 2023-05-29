@@ -1,0 +1,20 @@
+<template>
+  <div class="slds-var-m-around_medium">
+    <h3 class="slds-text-heading_medium slds-text-align_center">
+      {friendlyMessage}
+    </h3>
+    <template if:true={error}>
+      <template lwc:if={show}>
+        <a class="hide-details" onclick={handleHideDetails}>Hide Details</a>
+      </template>
+      <template lwc:else>
+        <a class="show-details" onclick={handleShowDetails}>Show Details</a>
+      </template>
+    </template>
+    <template if:true={show}>
+      <template for:each={errorMessages} for:item="error">
+        <p key={error}>{error}</p>
+      </template>
+    </template>
+  </div>
+</template>
