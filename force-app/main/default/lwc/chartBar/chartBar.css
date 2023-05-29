@@ -1,0 +1,11 @@
+.bar {
+  height: 40px;
+  background-color: green;
+  overflow: hidden;
+  margin-left: 5px;
+}
+
+lightning-layout {
+  overflow: hidden;
+  color: green;
+}

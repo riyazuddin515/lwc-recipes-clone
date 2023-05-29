@@ -1,0 +1,17 @@
+<template>
+  <lightning-card title="Api Property" icon-name="standard:product_consumed">
+    <div class="slds-var-m-around_medium">
+      <lightning-input
+        label="Percentage"
+        type="number"
+        value={percentage}
+        onchange={handleChange}
+      ></lightning-input>
+      <c-chart-bar percentage={percentage}></c-chart-bar>
+    </div>
+    <c-component-doc slot="footer">
+      Parent-to-Child communication. Pass data to a child component using its
+      public (@api) properties.
+    </c-component-doc>
+  </lightning-card>
+</template>
