@@ -1,0 +1,15 @@
+<template>
+  <lightning-input
+    type="checkbox"
+    label="Priority"
+    onchange={handleChange}
+  ></lightning-input>
+  <template lwc:if={filteredTodos}>
+    <template for:each={filteredTodos} for:item="todo">
+      <div class="todo" key={todo.id}>
+        <p>{todo.description}</p>
+        <p>Priority: {todo.priority}</p>
+      </div>
+    </template>
+  </template>
+</template>
