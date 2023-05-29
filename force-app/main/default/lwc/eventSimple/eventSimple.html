@@ -1,0 +1,14 @@
+<template>
+  <lightning-card title="Event Simple" icon-name="standard:logging">
+    <div class="slds-var-m-around_medium">
+      <p class="slds-text-align_center">Page {page}</p>
+      <c-paginator
+        onprevious={handlePrevious}
+        onnext={handleNext}
+      ></c-paginator>
+    </div>
+    <c-component-doc slot="footer">
+      Child-to-Parent communication using a custom event.
+    </c-component-doc>
+  </lightning-card>
+</template>
