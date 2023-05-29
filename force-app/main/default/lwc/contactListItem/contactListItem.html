@@ -1,0 +1,10 @@
+<template>
+  <lightning-layout vertical-align="center" onclick={handleSelect}>
+    <lightning-layout-item>
+      <img src={contact.Picture__c} alt="Profile Pic" />
+    </lightning-layout-item>
+    <lightning-layout-item padding="around-small">
+      <p>{contact.Name}</p>
+    </lightning-layout-item>
+  </lightning-layout>
+</template>

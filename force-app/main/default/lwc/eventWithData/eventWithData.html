@@ -1,0 +1,41 @@
+<template>
+  <lightning-card title="Event with Data" icon-name="standard:logging">
+    <template lwc:if={contacts.data}>
+      <lightning-layout class="slds-var-m-around_medium">
+        <lightning-layout-item>
+          <template for:each={contacts.data} for:item="contact">
+            <c-contact-list-item
+              key={contact.Id}
+              contact={contact}
+              onselect={handleSelect}
+            ></c-contact-list-item>
+          </template>
+        </lightning-layout-item>
+        <lightning-layout-item class="slds-var-m-left_large">
+          <template lwc:if={selectedContact}>
+            <img src={selectedContact.Picture__c} alt="Profile Pic" />
+            <p>{selectedContact.Name}</p>
+            <p>{selectedContact.Title}</p>
+            <p>
+              <lightning-formatted-phone
+                value={selectedContact.Phone}
+              ></lightning-formatted-phone>
+            </p>
+            <p>
+              <lightning-formatted-email
+                value={selectedContact.Email}
+              ></lightning-formatted-email>
+            </p>
+          </template>
+        </lightning-layout-item>
+      </lightning-layout>
+    </template>
+    <template lwc:elseif={contacts.error}>
+      <c-error-panel error={contacts.error}></c-error-panel>
+    </template>
+    <c-component-doc slot="footer">
+      Child-to-Parent communication using a custom event that passes data to the
+      parent component. Click an item in the list to see the recipe in aciton.
+    </c-component-doc>
+  </lightning-card>
+</template>
