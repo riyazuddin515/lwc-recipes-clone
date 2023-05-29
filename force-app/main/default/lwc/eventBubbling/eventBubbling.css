@@ -1,0 +1,10 @@
+img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+c-contact-list-item-bubbling {
+  cursor: pointer;
+  margin-bottom: 3px;
+}
