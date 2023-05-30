@@ -1,0 +1,23 @@
+<template>
+  <lightning-card title="Apex Imperative Method" icon-name="custom:custom63">
+    <div class="slds-var-m-around_medium">
+      <lightning-button
+        label="Load Contacts"
+        onclick={handleClick}
+      ></lightning-button>
+      <template lwc:if={contacts}>
+        <div class="slds-var-m-top_small">
+          <template for:each={contacts} for:item="contact">
+            <p key={contact.Id}>{contact.Name}</p>
+          </template>
+        </div>
+      </template>
+      <template lwc:elseif={error}>
+        <c-error-panel error={error}></c-error-panel>
+      </template>
+    </div>
+    <c-component-doc slot="footer">
+      Retrieve a list of record using an imperative Apex method call.
+    </c-component-doc>
+  </lightning-card>
+</template>
