@@ -1,0 +1,38 @@
+<template>
+  <lightning-card
+    title="Apex Wire Method to Function"
+    icon-name="custom:custom63"
+  >
+    <div class="slds-var-m-around_medium">
+      <div class="slds-var-m-bottom_small">
+        <lightning-layout vertical-align="end">
+          <lightning-layout-item flexibility="grow">
+            <lightning-input
+              label="Search"
+              type="search"
+              value={searchKey}
+              onchange={handleChange}
+            ></lightning-input>
+          </lightning-layout-item>
+          <lightning-layout-item class="slds-var-m-left_small">
+            <lightning-button
+              label="Search"
+              onclick={handleSearch}
+            ></lightning-button>
+          </lightning-layout-item>
+        </lightning-layout>
+      </div>
+      <template lwc:if={contacts}>
+        <template for:each={contacts} for:item="contact">
+          <p key={contact.Id}>{contact.Name}</p>
+        </template>
+      </template>
+      <template lwc:elseif={error}>
+        <c-error-panel error={error}></c-error-panel>
+      </template>
+    </div>
+    <c-component-doc slot="footer">
+      Call an Apex method with parametes imperatively.
+    </c-component-doc>
+  </lightning-card>
+</template>
