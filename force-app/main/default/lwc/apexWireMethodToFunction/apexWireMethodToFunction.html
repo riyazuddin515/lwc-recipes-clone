@@ -1,0 +1,21 @@
+<template>
+  <lightning-card
+    title="Apex Wire Method to Function"
+    icon-name="custom:custom63"
+  >
+    <div class="slds-var-m-around_medium">
+      <template lwc:if={contacts}>
+        <template for:each={contacts} for:item="contact">
+          <p key={contact.Id}>{contact.Name}</p>
+        </template>
+      </template>
+      <template lwc:elseif={error}>
+        <c-error-panel error={error}></c-error-panel>
+      </template>
+    </div>
+    <c-component-doc slot="footer">
+      Call an Apex method that retrieves a list of records using @wire. In this
+      recipe, the Apex method is @wired to a component function.
+    </c-component-doc>
+  </lightning-card>
+</template>
