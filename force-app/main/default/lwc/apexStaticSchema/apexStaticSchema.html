@@ -1,0 +1,17 @@
+<template>
+  <lightning-card title="Apex Static Schema" icon-name="custom:custom63">
+    <template lwc:if={contact.data}>
+      <div class="slds-var-m-around_medium">
+        <p>{name}</p>
+        <p>{title}</p>
+        <lightning-formatted-email value={email}></lightning-formatted-email>
+      </div>
+    </template>
+    <template lwc:elseif={contact.error}>
+      <c-error-panel error={contact.error}></c-error-panel>
+    </template>
+    <c-component-doc slot="footer">
+      Call Apex method and get SObject values using a static schema defination.
+    </c-component-doc>
+  </lightning-card>
+</template>
